@@ -5,15 +5,15 @@ import statistics.Player;
 public class HasFewerThan implements Matcher{
 
     private int value;
-    private String fieldName;
+    private String category;
 
     public HasFewerThan(int value, String category) {
         this.value = value;
-        fieldName = "get"+Character.toUpperCase(category.charAt(0))+category.substring(1, category.length());
+        this.category = category;
     }
 
     @Override
     public boolean matches(Player p) {
-        return new Not(new HasAtLeast(value, fieldName)).matches(p);
+        return new Not(new HasAtLeast(value, category)).matches(p);
     }
 }

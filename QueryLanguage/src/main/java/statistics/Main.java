@@ -12,9 +12,8 @@ public class Main {
                              new HasAtLeast(5, "assists"),
                              new PlaysIn("PHI")
         );
-        
-        for (Player player : stats.matches(m)) {
-            System.out.println(player);
-        }
+
+        System.out.println(stats.matches(new All()).size());
+
     }
 }
